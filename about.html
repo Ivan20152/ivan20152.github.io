@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ivan's Portfolio</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"> <!--import for font family-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--import for icons-->
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+    <body style="height: 880px;">
+        <div class=header>
+            <h1>Ivan's Portfolio</h1>
+        </div>
+
+        <ul class="topnav" id="navbar">
+            <li id=tab><a class="fa fa-home" href="index.html" style="font-size: 22px; padding: 16px;"></a></li>
+            <li id=tab style="font-size: 19px;" class="dropdown">
+            <a class="dropbtn" href="projects.html">Projects</a><!-- tabs means pages within webpage -->
+            <div class="dropdown-content">
+                <a href="projects.html#java-programs">Java</a>
+                <a href="projects.html#python-programs">Python</a>
+                <a href="projects.html#c-programs">C</a>
+                <a href="projects.html#csh-programs">C#</a>
+            </div>
+            </li>  <!--Added 1 pixel of padding to offset and balance the icon height-->
+            <!--<li id=tab style= "font-size: 19px;"><a href="contact.html">Contact</a></li>-->  <!-- media-tabs means links to access social media -->
+            <li id=tab style= "font-size: 19px;"><a href="about.html">About</a></li>
+            <li id=media-tab><a class="fa fa-linkedin" href="https://www.linkedin.com/in/ivan-kuadey-1096231aa"></a></li>
+            <li id=media-tab><a class="fa fa-github" href="https://github.com/Ivan20152"></a></li>
+        </ul>
+
+        <div class="page2-content" style="padding: 30px;">
+            <div class="my-photo" style="background-color: darkgray; padding: 20px; width: 33%;">
+                <img style= "width: 99%;" src="Photos_&_Gifs/ME.JPG">
+            </div>
+            
+            <div class="about-intro" style="background-color: darkgray; padding: 20px; width: 60%;">
+                <h2 style="padding-left: 20px;"><i> <u>About Me</u> </i></h2>
+                <p style="padding-top: 10px; font-size: 18px; text-indent: 40px; line-height: 25px; margin: 10px 0px"> My name is Ivan Kuadey and I'm currently a Computer Science Major at George Mason University.
+                Problem solving and creativity are two areas I excel at. Combining these skillsets along with my passion for programming will advance me towards
+                my goal in furthering my career within in the tech industry. I'm eager to further my studies in the computer science field and I look forward to any future experiences and opportunities I'm fortunate to discover! </p>
+            </div>
+
+            <div class="contact-info" style="background-color: darkgray; padding: 20px; width: 60%; margin: 20px 0px 10px; text-align: center; height: 321px">
+                <h1><u>Contact Information</u></h1> <br> <p style="font-size: 30px; padding-top: 80px;"> Email: <i>ivankuadey6@gmail.com</i> <br> Phone Number: 540-326-6029 </p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        window.onscroll = function() {myFunction()}; // This is for keeping the nav bar at the top while page is being scrolled
+        
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            if (document.location.hash) {
+                setTimeout(function(){
+                    window.scrollTo(window.scrollX, window.scrollY - 110);
+                }, 10);
+            }
+        })();
+    </script>
+</html>

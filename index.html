@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ivan's Portfolio</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"> <!--import for font family-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--import for icons-->
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+    <body>
+        <div class=header>
+            <h1>Ivan's Portfolio</h1>
+        </div>
+
+        <ul class="topnav" id="navbar">
+            <li id=tab><a class="fa fa-home" href="index.html" style="font-size: 22px; padding: 16px;"></a></li>
+            <li id=tab style="font-size: 19px;" class="dropdown">
+                <a class="dropbtn" href="projects.html">Projects</a><!-- tabs means pages within webpage -->
+                <div class="dropdown-content">
+                    <a href="projects.html#java-programs" style="scroll-behavior: smooth;">Java</a>
+                    <a href="projects.html#python-programs">Python</a>
+                    <a href="projects.html#c-programs">C</a>
+                    <a href="projects.html#csh-programs">C#</a>
+                </div>
+            </li> 
+            <li id=tab style= "font-size: 19px;"><a href="about.html">About</a></li>
+            <li id=media-tab><a class="fa fa-linkedin" href="https://www.linkedin.com/in/ivan-kuadey-1096231aa"></a></li>
+            <li id=media-tab><a class="fa fa-github" href="https://github.com/Ivan20152"></a></li>
+        </ul>
+
+        <div class="page0-content">
+            <div class="headline1"> <!--LEFT SIDE OF PAGE-->
+                <h2>Featured Project (Update In Progress)</h2>
+                <h5 style= "font-family: Times New Roman;"><i>Date Posted: July 30th, 2020</i></h5>
+                <h5 style= "font-family: Times New Roman;"><i>Coded in Python</i></h5>
+                <img style= "width: 75%; margin: auto; display: block; margin-top: 20px;" src="Photos_&_Gifs/NBA.GIF">
+            </div>
+            <div class="headline1-content"> <!--RIGHT SIDE OF PAGE-->
+                <h3 style="text-align: center; padding: 10px;">NBA Player/Team Search Engine</h3>
+                <p style= "text-indent: 30px;"> My program is written in Python that uses both the NBA_API and 
+                Qwant Search Engine API. This program takes NBA player and team search queries 
+                to provide the user with up-to-date stats and information along with a photo/logo of the respective 
+                player/team.</p>
+
+                <br> <p style="font-weight: bold; text-indent: 20px;"> <u>Future Update Features</u> </p> 
+                <ul>
+                    <li>Player/Team Hotspots Chart</li>
+                    <li>Player Comparisons</li>
+                    <li>All Star Potential Algorithm</li>
+                    <li>Current Roster Listed For Each Team </li>
+                    <li>Historic Players and Teams Stats/Information </li>
+                </ul>
+                <br><b>DISCLAIMER:</b><i> This program is not affiliated, associated, authorized, endorsed by or in any way officially connected to the National Basketball Association ("NBA")</i><br><br>
+                <div class="image-gallery" style="padding-left: 7px;">
+                    <img id="img1" style= "width: 28%; height: 94px; display: inline-block; border-radius: 15px; margin: 0px 5px" src="Photos_&_Gifs/Screenshot Example 1.png">
+                    <img id="img2" style= "width: 28%; height: 94px; display: inline-block; border-radius: 15px; margin: 0px 5px" src="Photos_&_Gifs/Screenshot Example 2.png">
+                    <img id="img3" style= "width: 28%; height: 94px; display: inline-block; border-radius: 15px; margin: 0px 5px" src="Photos_&_Gifs/Screenshot Example 3.png">
+                </div>
+            </div>
+            <!--Image is a gif of the NBA Search Engine start screen-->
+
+            <div class="modal" id="myModal">
+                <span class="close1">&times;</span>
+                <span class="close2">&times;</span>
+                <span class="close3">&times;</span>
+
+                <img class="modal-content" id="img01">
+                <img class="modal-content" id="img02">
+                <img class="modal-content" id="img03">
+
+                <div id="caption1"></div>
+                <div id="caption2"></div>
+                <div id="caption3"></div>
+            </div> 
+        </div>
+    </body>
+
+    <script> 
+        window.onscroll = function() {myFunction()}; // This is for keeping the nav bar at the top while page is being scrolled
+        
+        var navbar = document.getElementById("navbar");
+
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
+
+    <script>  //Script for modal pop up images
+        var modal = document.getElementById("myModal");
+        
+        var img1 = document.getElementById("img1");
+        var img2 = document.getElementById("img2");
+        var img3 = document.getElementById("img3");
+
+        var modalImg1 = document.getElementById("img01");
+        var modalImg2 = document.getElementById("img02");
+        var modalImg3 = document.getElementById("img03");
+
+        var captionText1 = document.getElementById("caption1");
+        var captionText2 = document.getElementById("caption2");
+        var captionText3 = document.getElementById("caption3");
+
+        if (img1.onclick = function(){
+            modal.style.display = "block";
+            modalImg1.src = this.src;
+            captionText1.innerHTML = "Jayson Tatum";
+            img01.style.display = "block";
+            img02.style.display = "none";
+            img03.style.display = "none";
+        })
+        if (img2.onclick = function(){
+            modal.style.display = "block";
+            modalImg2.src = this.src;
+            captionText1.innerHTML = "Golden State Warriors";
+            img01.style.display = "none";
+            img02.style.display = "block";
+            img03.style.display = "none";
+        })
+        if (img3.onclick = function(){
+            modal.style.display = "block";
+            modalImg3.src = this.src;
+            captionText1.innerHTML = "Lebron James";
+            img01.style.display = "none";
+            img02.style.display = "none";
+            img03.style.display = "block";
+        })
+
+        var span1 = document.getElementsByClassName("close1")[0];
+        var span2 = document.getElementsByClassName("close2")[0];
+        var span3 = document.getElementsByClassName("close3")[0];
+
+        span1.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        span2.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        span3.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        (function() {
+            if (document.location.hash) {
+                setTimeout(function(){
+                    window.scrollTo(window.scrollX, window.scrollY - 110);
+                }, 10);
+            }
+        })();
+    </script>
+</html>
